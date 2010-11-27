@@ -62,7 +62,7 @@
 
 
       #header {
-        background-image: url("images/rails.png");
+        background-image: url("/images/rails.png");
         background-repeat: no-repeat;
         background-position: top left;
         height: 64px;
@@ -178,12 +178,12 @@
       }
       
     </style>
-    <script type="text/javascript" src="javascripts/prototype.js"></script>
-    <script type="text/javascript" src="javascripts/effects.js"></script>
+    <script type="text/javascript" src="/javascripts/prototype.js"></script>
+    <script type="text/javascript" src="/javascripts/effects.js"></script>
     <script type="text/javascript">
       function about() {
         if (Element.empty('about-content')) {
-          new Ajax.Updater('about-content', 'rails/info/properties', {
+          new Ajax.Updater('about-content', '/rails/info/properties', {
             method:     'get',
             onFailure:  function() {Element.classNames('about-content').add('failure')},
             onComplete: function() {new Effect.BlindDown('about-content', {duration: 0.25})}
@@ -212,6 +212,16 @@
               <input type="text" id="search-text" name="q" value="site:rubyonrails.org " />
               <input type="submit" value="Search" /> the Rails site
             </form>
+          </li>
+
+          <li>
+            <h3>Applications Demos</h3>
+            <ul class="links">
+              <li><a href="/">Home</a></li>
+              <li><a href="http://ctc.cidadelas.com.br/">Cidadelas Projects</a></li>
+              <li><a href="https://github.com/CidadelasIT">CidadelasIT on Github</a></li>
+              <li><a href="http://twitter.com/cidadelas">@cidadelas on Twitter</a></li>
+            </ul>
           </li>
         
           <li>
@@ -243,8 +253,10 @@
         
         <%= yield %>
         
+        <br />
+        
         <div id="about">
-          <h3><a href="rails/info/properties" onclick="about(); return false">About this application&rsquo;s environment</a></h3>
+          <h3><a href="/rails/info/properties" onclick="about(); return false">About this application&rsquo;s environment</a></h3>
           <div id="about-content" style="display: none"></div>
         </div>
         

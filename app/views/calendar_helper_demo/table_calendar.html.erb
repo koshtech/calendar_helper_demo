@@ -1,10 +1,24 @@
-<%=stylesheet_link_tag "/stylesheets/calendar/red/style.css" %>
- 
-<%= calendar({:year => 2010, :month => 11}) do |d| 
+        <%=stylesheet_link_tag "/stylesheets/calendar/red/style.css" %>
+        <div id="getting-started">
+          <h1>table_calendar</h1>
+          <p>This is a original calendar helper example.</p>
+          <%= calendar({:year => 2010, :month => 11}) do |d| 
+            if @listOfSpecialDays.include?(d)
+              [d.mday, {:class => "specialDay" } ]
+            else
+              [d.mday, {:class => "normalDay"} ]
+            end
+          end %>
+          <p>Code:<br>
+          <pre>
+&lt;%= calendar({:year => 2010, :month => 11}) do |d| 
   if @listOfSpecialDays.include?(d)
-    [d.mday, {:class => "specialDay", :label => @listOfSpecialDetails[d.to_s][0][:label] } ]
+    [d.mday, {:class => "specialDay" } ]
   else
-    [d.mday, {:class => "normalDay", :label => ''} ]
+    [d.mday, {:class => "normalDay"} ]
   end
- end %>
-
+end%&gt;
+          </pre>
+          </p>
+        </div>
+        

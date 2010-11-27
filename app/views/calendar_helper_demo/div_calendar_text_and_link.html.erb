@@ -1,10 +1,28 @@
-<%=stylesheet_link_tag "/stylesheets/calendar/red/style.css" %>
- 
-<%= calendar({:year => 2010, :month => 11}) do |d| 
-  if @listOfSpecialDays.include?(d)
-    [d.mday, {:class => "specialDay", :label => @listOfSpecialDetails[d.to_s][0][:label] } ]
-  else
-    [d.mday, {:class => "normalDay", :label => ''} ]
-  end
- end %>
+        <%=stylesheet_link_tag "/stylesheets/calendar/red/style.css" %>
+        <div id="getting-started">
+          <h1>div_calendar::text_and_link</h1>
+          <p>We modify the original plugin for one project, creating a fork to including support for HTML in cell_text var. For that, we create a <tt>:label</tt> option in the calendar method, and populate a secondary array with dates and HTML for labels. In the real application, these datas comes from an storage database engine.</p>
 
+          <%= calendar({:year => 2010, :month => 11}) do |d| 
+            if @listOfSpecialDays.include?(d)
+              [d.mday, {:class => "specialDay", :label => @listOfSpecialDetails[d.to_s][0][:label] } ]
+            else
+              [d.mday, {:class => "normalDay"} ]
+            end
+          end %>
+          
+          <p>Code:<br>
+          <pre>
+&lt;%= calendar({:year => 2010, :month => 11}) do |d| 
+  if @listOfSpecialDays.include?(d)
+    [d.mday, {
+      :class => "specialDay", 
+      :label => @listOfSpecialDetails[d.to_s][0][:label] 
+    } ]
+  else
+    [d.mday, {:class => "normalDay"} ]
+  end
+end%&gt;
+          </pre>
+          </p>
+        </div>
