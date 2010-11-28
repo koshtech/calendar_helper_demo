@@ -16,7 +16,7 @@
 end%&gt;
           </pre>
           </p>
-          <%= calendar({:year => 2010, :month => 11}) do |d| 
+          <%= calendar({:year => 2010, :month => 11, :previous_month_text => 'previous', :next_month_text => 'next'}) do |d| 
             if @listOfSpecialDays.include?(d)
               [d.mday, {:class => "specialDay", :label => @listOfSpecialDetails[d.to_s][0][:label] } ]
             else

@@ -1,0 +1,83 @@
+/*
+  A grey based tableless theme.
+  
+  AUTHOR: 
+  
+  Based on Geoffrey Grosenbach http://nubyonrails.com gray theme - inspired by 
+  Blinksale and their ColorBurn widget. http://firewheeldesign.com
+  
+  Colors: 
+    dk: 787888
+    lt: 4f4f5b
+    lter: a8a8a8
+    white: ffffff
+*/
+
+/* TODO */
+
+.calendar .box {
+	width: 392px;
+	height: auto;
+	padding: 4px;
+}
+
+.box { position: relative; }
+
+#calendar-container { overflow: hidden; margin-bottom: 20px; }
+
+.day {
+  color: black;
+	width: 56px;
+	height: 56px;
+	float: left;
+	display: block;
+	border: 1px solid lightgray;
+	background-position: 0 100%;
+}
+
+.special-day { 
+  color: white;
+ 	width: 56px;
+	height: 56px;
+	float: left;
+	display: block; 
+  background-color: green; 
+  background-position: 0 100%;
+}
+.special-day a{
+  color: white;
+  text-decoration: none;
+}
+
+.month-name { 
+  color: black;
+}
+.month-name a{
+  color: black;
+  text-decoration: none;
+}
+.month-name a:hover{
+  color: white;
+  text-decoration: none;
+}
+.day-name { background-color: lightgrey; color: black; border: 1px solid gray;}
+.past-day { opacity: 0.4; background-color: none ;}
+.today { background-color: lightblue; color: blue;}
+.future-day { opacity: 0.6; background-color: none ;}
+.weekend { /* background-color: lightgreen; */}
+.weekend-day-name { background-color: lightgreen; color: black; border: 1px solid gray;}
+
+
+.calendar_container .day span {
+	font-size: 10px;
+	display: block;
+	text-align: right;
+	padding-right: 2px;
+}
+
+.calendar_container .day a {
+	display: inline-block;
+	font-size: 10px;
+}
+
+
