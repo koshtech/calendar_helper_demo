@@ -10,7 +10,7 @@
                                   :next_month_text => '<a href="#">next</a>', 
                                   :previous_month_text => '<a href="#">previous</a>'}) do |d| 
             if @listOfSpecialDays.include?(d)
-              [d.mday, {:day_class => "special-day", :label => @listOfSpecialDetails[d.to_s][0][:label] } ]
+              [d.mday, {:day_class => "special-day", :label => @listOfSpecialDetails[d.to_s] } ]
             else
               [d.mday, {:day_class => "day"} ]
             end

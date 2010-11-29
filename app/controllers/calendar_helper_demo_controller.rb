@@ -5,11 +5,13 @@ class CalendarHelperDemoController < ApplicationController
   
   def div_calendar_text_and_link
     @listOfSpecialDays = [ '2010-11-15'.to_date, '2010-11-25'.to_date, '2010-12-03'.to_date ]
-    @listOfSpecialDetails = { 
-      '2010-11-15' => [:day => '2010-11-15', :label => "<a href='#'>Test one</a>"], 
-      '2010-11-25' => [:day => '2010-11-25', :label => "<a href='#'>Holiday</a>"],
-      '2010-12-03' => [:day => '2010-12-03', :label => "<a href='#'>Test three</a>"]
-    }
+    
+    @listOfSpecialDetails = {}
+    
+    @listOfSpecialDetails['2010-11-15'] = "<a href='#'>Test one</a>" 
+    @listOfSpecialDetails['2010-11-25'] = "<a href='#'>Holiday</a>" 
+    @listOfSpecialDetails['2010-12-03'] = "<a href='#'>Test three</a>" 
+    
   end 
   
   def div_calendar
