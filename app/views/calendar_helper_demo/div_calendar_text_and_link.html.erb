@@ -4,13 +4,15 @@
           <h1>div_calendar::text_and_link</h1>
           <p>We modify the original plugin for one project, creating a fork to including support for HTML in cell_text var. For that, we create a <tt>:label</tt> option in the calendar method, and populate a secondary array with dates and HTML for labels. In the real application, these datas comes from an storage database engine.</p>
 <p>Juca</p>
+          
           <%= tableless_calendar({:year => 2010, 
-                                  :month => 11, 
-                                  :layout => 'tableless', 
+                                  :month => 12, 
+                                  :month_header  => true,
+                                  :month_header_position => 'bottom',
                                   :next_month_text => '<a href="#">next</a>', 
                                   :previous_month_text => '<a href="#">previous</a>'}) do |d| 
-            if @listOfSpecialDays.include?(d)
-              [d.mday, {:day_class => "special-day", :label => @listOfSpecialDetails[d.to_s] } ]
+            if @listOfSpecialDays.include?(d.to_s)
+              [d.mday, {:day_class => "special-day", :label => @listOfSpecialDays[d.to_s] } ]
             else
               [d.mday, {:day_class => "day"} ]
             end
